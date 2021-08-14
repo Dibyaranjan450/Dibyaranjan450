@@ -1,79 +1,476 @@
 <!DOCTYPE html>
-<html>
-	<head>
+<html lang="en">
+    <head>
 
-		<link rel="icon" type="image/x-icon" href="https://www.google.com/search?q=google&sxsrf=ALeKk00TXa_FUsNdvuUGXfjS881r-HUJIw:1628750123467&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwifvaWE76ryAhUqr5UCHTg1CnEQ_AUoBHoECAEQBg&biw=1536&bih=750#imgrc=GbcqqQXS0-LkLM">
+        <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLkkj8ac3zCqB-1qmAcVu0BUXfe-DLY7kwVbwtiJ7DQEalVF6hPMd1kxOy3fjANLc6Bls&usqp=CAU">
 
-		<Title>
-			google-Google Search
-		</Title>
+        <title style="font-size: 2px">
+            New Tab
+        </title>
 
-		<style>
-			h2{
-				color: skyblue;
-				background-color: azure;
-			}
+        <style>
+            
+            #header-sec{
+                display: flex;
+                flex-wrap: wrap-reverse;
+                justify-content: flex-end;
+                font-family: 'sans-serif';
+                position: relative;
+            }
 
-			.text{
-				font-weight: bold;
-				color: skyblue;
-				background-color: azure;
-			}
+            #header-box{
+                font-size: 12px;
+                padding: 5px;
+                padding-top: 15px;
+            }
 
-			.image{
-				height: 50;
-				width: 50;
-			}
-		</style>
-	</head>
+            #app-drawer{
+                width: 25px;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 12px;
+                display: block;
+            }
 
-	<body>
-		
-		<div>
+            .overlay {
+                position: absolute;
+                left: 1423px;
+                height: 35px;
+                width: 35px;
+                opacity: 0;
+                transition: .2s ease;
+                background-color: rgba(231,233,235,0.8);
+                border-radius: 30px;
+                margin: 4px;
+            }
 
-		<h2>This is a normal page.</h3>
-		
-		<hr>
+            #header-sec:hover .overlay{
+                opacity: 1;
+            }
 
-			<h2>This is a normal page.</h3>
+            #profile-icon{
+                height: 35px;
+                width: 35px;
+                border-radius: 30px;
+                margin: 4px;
+                background-color: black;
+            }
 
-		</div>
-		
-		<div>
+        </style>
 
-			<p1 class="text">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-			</p1>
+        <style>
 
-		</div>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 
-		<div>
+            #upper-sec{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 0px;
+            }
+            
+            #img-logo{
+                height: 215px;
+                width: 320px;
+            }
 
-			<p1 class="text">
-				This is a another paragraph. And there's just text.
-			</p1>
+            #search-box{
+                display: flex;
+                justify-content: center;
+                box-shadow:0px 0px 5px 3px rgba(0,0,0,.1);
+                border-top-right-radius: 30px; 
+                border-bottom-right-radius: 30px;
+                border-top-left-radius: 30px; 
+                border-bottom-left-radius: 30px;
+            }
 
-		</div>
-		
-		<div>
+            #search-border{
+                border-style: solid;
+                display: flex;
+                justify-content: center;
+                border: none;
+                height: 40px;
+            }
 
-			<p1 class="text">
-				There's some more texts. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-			</p1>
+            #search-icon-border{
+                width: 50px;
+                border-width: 2px;
+                border-right: transparent;
+                border-right-width: 4px;
+                left-width: 20px; 
+                height: 42px;
+                text-align: right;
+                border: none;
+            }
 
-		</div>
+            #input-box{
+                width: 450px;
+                height: 40px;
+                border-top-right-radius: 30px; 
+                border-bottom-right-radius: 30px;
+                border-left: none;
+                font-weight: bold;
+                font-family: 'Noto Sans JP', sans-serif;
+                font-size: 15px;
+                border:none;
+            }
 
-		<div>
-			
-			<img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/CEPC/Clearance/May21/V238940049_IN_PC_BAU_Edit_Creation_Laptops1x._SY304_CB667377205_.jpg">
+            #mag-glass-img{
+                height: 25px;
+                width: 25px;
+                border: 2px;  
+                margin-top: 10px;
+                text-align: right;
+            }
 
-		</div>
+            #google-mic{
+                width: 30px;
+                border-width: 2px;
+                left-width: 20px; 
+                height: 42px;
+                text-align: left;
+            }
 
-		<div>
-			
-			<img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Xiaomi/RedmiNote10S/GW/August/HDFC/D23007216_WLD_Xiaomi_RedmiNote10S_NewLaunch_tallhero_3000x1200._CB644052309_.jpg">
+            #mic-img{
+                height: 18px;
+                width: 12px;
+                padding-top: 12px;
+                margin-right: 4px
+            }
 
-		</div>
+        </style>
 
-	</body>
+        <style>
+            
+            #icon-sec{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+           }
+
+           #icon-pack-box{
+            display: flex;
+            flex-wrap: flex;
+            justify-content: center;
+            width: 510px;
+           }
+
+           .icon-box{
+            text-align: center;
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+           }
+
+           #icon{
+            height: 45px;
+            width: 45px;
+            border-radius: 25px;
+            margin-top: 10px;
+            margin-left: 25px;
+            background-color: #F2F4F5;
+           }
+
+           #icon-img{
+            text-align: center;
+            padding-top: 5px;
+            height: 35px;
+            width: 35px;
+           }
+
+           #icon-text{
+            font-family: sans-serif;
+            padding-top: 15px;
+            font-size: 14px;
+
+           }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="header-sec">
+
+            <div id="header-box">
+
+                <a href="https://mail.google.com/mail/">
+
+                    Gmail
+                </a>
+
+            </div>
+
+            <div id="header-box">
+
+                <a href="https://www.google.co.in/imghp?hl=en-GB&tab=ri&authuser=0&ogbl">
+
+                    Images
+                </a>
+
+            </div>
+
+            <div title="Google apps">
+
+                <a href="https://about.google/intl/en-GB/products/?tab=rh">
+
+                    <div class="overlay"></div>
+
+                    <img id="app-drawer" src="https://img.favpng.com/2/9/19/computer-icons-png-favpng-M4w9CcsPz87E04SDvHJfWd5jC.jpg">
+
+                </a>
+
+            </div>
+
+            <div>
+                
+                <a href="https://accounts.google.com/SignOutOptions?hl=en-GB&continue=https://www.google.com%3Fhl%3Den-GB">
+                    
+                    <div title="Google account" id="profile-icon">
+
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div id="upper-sec">
+
+            <img id="img-logo" src="https://cdn.vox-cdn.com/thumbor/Pkmq1nm3skO0-j693JTMd7RL0Zk=/0x0:2012x1341/1200x800/filters:focal(0x0:2012x1341)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg">
+
+        </div>
+
+        <div id="search-border">
+
+            <form action=" https://google.com/search">
+
+        	   <div id="search-box">
+
+                    <box id="search-icon-border">
+
+                        <img class="" id="mag-glass-img" src="https://cdn4.iconfinder.com/data/icons/commenly-needed/400/Icon-12-512.png">
+
+                    </box>
+
+        		    <input id="input-box" type="text" name="q" placeholder="  Search Google or type a URL">
+
+                    <div id="google-mic" title="Search by voice">
+
+                        <a href="https://www.google.com">
+
+                            <img id="mic-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1425px-Google_mic.svg.png">
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <div style="margin-top: 20px;">
+
+        <div id="icon-sec">
+
+            <div id="icon-pack-box">
+
+                <div class="icon-box" title="YouTube">
+
+                    <a href="https://www.youtube.com/">
+
+                        <div id="icon">
+
+                            <img id="icon-img" src="https://icons-for-free.com/iconfiles/png/512/share+social+youtube+icon-1320194695196489452.png"> 
+
+                        </div>
+
+                    </a>
+
+                    <div id="icon-text">
+
+                        <p1> YouTube </p1>
+
+                    </div>
+
+                </div>
+
+                <div class="icon-box" title="Inbox">
+
+                    <a href="https://mail.google.com/mail">
+                        <div id="icon">
+
+                            <img id="icon-img" src="https://cdn.icon-icons.com/icons2/2631/PNG/512/gmail_new_logo_icon_159149.png"> 
+
+                        </div>
+                    </a>
+
+                    <div id="icon-text">
+
+                        <p1> Inbox(1,024) </p1>
+
+                    </div>
+
+                </div>
+
+                <div class="icon-box" title="Amazon.in">
+
+                    <a href="https://www.amazon.in/">
+                    
+                        <div id="icon">
+
+                            <img id="icon-img" src="https://www.citypng.com/public/uploads/preview/-11596400565qsuxfwyv9j.png"> 
+
+                        </div>
+
+                    </a>
+
+                    <div id="icon-text">
+
+                        <p1> Amazon.in </p1>
+
+                    </div>
+
+                </div>
+
+                <div class="icon-box" title="WhatsApp">
+
+                    <a href="https://web.whatsapp.com/">
+                    
+                        <div id="icon">
+
+                            <img id="icon-img" src="https://icons-for-free.com/iconfiles/png/512/chat+friends+message+social+whatsapp+icon-1320194692736560212.png"> 
+
+                        </div>
+
+                    </a>
+
+                    <div id="icon-text">
+
+                        <p1> WhatsApp </p1>
+
+                    </div>
+
+                </div>
+
+                <div class="icon-box" title="Netflix">
+
+                    <a href="https://www.netflix.com">
+                    
+                        <div id="icon">
+
+                            <img id="icon-img" src="https://image.pngaaa.com/339/5468339-middle.png"> 
+
+                        </div>
+
+                    </a>
+
+                    <div id="icon-text">
+
+                        <p1> Netflix </p1>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div id="icon-sec">
+
+            <div id="icon-pack-box">
+
+                <div class="icon-box" title="Meet">
+
+                    <a href="https://meet.google.com">
+                    
+                        <div id="icon">
+
+                            <img id="icon-img" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-05-512.png"> 
+
+                        </div>
+
+                    </a>
+
+                    <div id="icon-text">
+
+                        <p1> Meet </p1>
+
+                    </div>
+
+                </div>
+
+                <div class="icon-box" title="GitHub">
+
+                    <a href="https://github.com/">
+                    
+                        <div id="icon">
+
+                            <img id="icon-img" src="https://w7.pngwing.com/pngs/646/324/png-transparent-github-computer-icons-github-logo-monochrome-head-thumbnail.png"> 
+
+                        </div>
+
+                    </a>
+
+                    <div id="icon-text">
+
+                        <p1> GitHub </p1>
+
+                    </div>
+
+                </div>
+
+                <div class="icon-box" title="Facebook">
+
+                    <a href="https://www.facebook.com/">
+                    
+                        <div id="icon">
+
+                            <img id="icon-img" src="https://cliply.co/wp-content/uploads/2019/04/371903520_SOCIAL_ICONS_FACEBOOK.png"> 
+
+                        </div>
+
+                    </a>
+
+                    <div id="icon-text">
+
+                        <p1> Facebook </p1>
+
+                    </div>
+
+                </div>
+
+                <div class="icon-box">
+
+                    <a href="https://www.google.com">
+                    
+                        <div id="icon">
+
+                            <img id="icon-img" src="https://icon-library.com/images/icon-small/icon-small-15.jpg"> 
+
+                        </div>
+
+                    </a>
+
+                    <div id="icon-text">
+
+                        <p1> Add shortcut </p1>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+        </div>
+
+    </body>
+
 </html>
