@@ -5,10 +5,9 @@ Config files for my GitHub profile.
 
 Clone it :
 
-`
-$https://github.com/Dibyaranjan450/google-clone.git
-
-`
+```
+$ git clone https://github.com/Dibyaranjan450/google-clone.git
+```
 
 Visit the page at : 
 
