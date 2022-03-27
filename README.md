@@ -1,5 +1,6 @@
 # google-Clone
-clone-img/Screenshot (5).png
+
+![Sample App Image](clone-img/Screenshot.png)
 
 ## Usage
 
