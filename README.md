@@ -18,3 +18,5 @@ https://dibyaranjan450.github.io/google-clone/
 
 ## Contributor
 
+Creator of google cloan @Dibyaranjan450
+
