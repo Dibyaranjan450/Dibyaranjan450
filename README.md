@@ -13,7 +13,6 @@ Visit the page at :
 
 `
 https://dibyaranjan450.github.io/google-clone/
-
 `
 
 ## Contributor
