@@ -1,5 +1,5 @@
-# google-clone
-Config files for my GitHub profile.
+# google-Clone
+clone-img/Screenshot (5).png
 
 ## Usage
 
