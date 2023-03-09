@@ -1,4 +1,4 @@
-# google-Clone
+# google-clone
 
 ![Sample App Image](clone-img/Screenshot.png)
 
